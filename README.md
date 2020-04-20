@@ -1,9 +1,9 @@
 # event-fb-scraper
-a basic python server for searching / scraping / storing / downloading events from facebook.
+A basic python server for searching / scraping / storing / downloading events from facebook.
 
 # credits and thanks
 All the cleverness in this production has originated from https://github.com/pipriles/fb-event-scraper
-Most of the parts were already perfect specifically location.py and fblogin.py files. 
+Most of the parts were already perfect, specifically location.py and fblogin.py files.
 I also did not touch any part of the exctracting process with beautifull soup.
 I adapted the code for my needs and added some stuff.
 
@@ -11,7 +11,7 @@ Here is the result.
 
 # minimalist explanation
 
-this code will launch an HTTP server and listen for HTTP requests.
+This code will launch an HTTP server and listen for HTTP requests.
 (completely overkill I could just parse arguments as a normal program would do and quit the programm once the job is done. But I wanted to try flask and multiprocessing libraries)
 
 you need python3 installed and also privilegies to write inside the folder you are running the server.
@@ -41,7 +41,7 @@ to launch a scrapping process send a post request :
 curl --location --request POST 'http://localhost:4200/run-event-searcher' --header 'Content-Type: application/json' --data-raw '{ "login": "YOUR_ACCOUNT_EMAIL@domain.com", "passwd": "YOUR_PASSWORD", "keyword": "lgbt", "location": "paris", "next_days": 18}'
 ```
 
-N.b : For now searchable locations are paris and london. If you want to search on an other city you need to search manually on facebook an other location, take the base64 encoded url, decode it and retrieve the "filter_events_location" value. Then fill-up the CITY_CODES dictionary. If you enter a non-referenced city-name it will fall-back to paris city-code.
+N.b : For now, searchable locations are paris and london. If you want to search on an other city you need to search manually on facebook an other location, take the base64 encoded url, decode it and retrieve the "filter_events_location" value. Then fill-up the CITY_CODES dictionary. If you enter a non-referenced city-name it will fall-back to paris city-code.
 
 - It can read the file 'inputs/list-of-groups.csv' and recursively extract the incoming events for this group.
 
