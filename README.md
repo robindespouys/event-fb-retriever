@@ -1,5 +1,5 @@
 # event-fb-scraper
-A basic python server for searching / scraping / storing / downloading events from facebook.
+A basic python server for searching / scraping / storing events from facebook.
 
 # credits and thanks
 All the cleverness in this production has originated from https://github.com/pipriles/fb-event-scraper
